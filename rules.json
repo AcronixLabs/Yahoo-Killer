@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://www.google.com/search\\?q=\\1"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://search\\.yahoo\\.com/search\\?.*[?&]p=([^&]+).*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://www.google.com/search"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://search\\.yahoo\\.com/search(\\?.*)?$",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

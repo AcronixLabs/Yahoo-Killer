@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Yahoo-Killer",
+  "version": "1.0.0",
+  "description": "Redirects all search.yahoo.com traffic to Google Search and sets Google as default search engine",
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage",
+    "searchEngines"
+  ],
+  "host_permissions": [
+    "*://search.yahoo.com/*",
+    "*://*.search.yahoo.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Yahoo-Killer"
+  },
+  "incognito": "spanning"
+}
