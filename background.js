@@ -1,12 +1,9 @@
-// Try to set Google as default search engine if API is available
+// Redirects Yahoo search to Google
+// Note: Changing default search engine is not possible via extension API in modern Chrome
 chrome.runtime.onInstalled.addListener(() => {
-  if (chrome.searchEngines && chrome.searchEngines.setDefault) {
-    chrome.searchEngines.setDefault({ name: "google", keyword: "google.com" }).catch(() => {});
-  }
+  // Extension installed
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  if (chrome.searchEngines && chrome.searchEngines.setDefault) {
-    chrome.searchEngines.setDefault({ name: "google", keyword: "google.com" }).catch(() => {});
-  }
+  // Extension started
 });

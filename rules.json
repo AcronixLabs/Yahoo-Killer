@@ -5,25 +5,25 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://www.google.com/search\\?q=\\1"
+        "regexSubstitution": "https://www.google.com/search?q=\\1"
       }
     },
     "condition": {
-      "regexFilter": "^https://search\\.yahoo\\.com/search\\?.*[?&]p=([^&]+).*",
+      "regexFilter": "^https://[^/]*search\\.yahoo\\.com/search\\?.*p=([^&]+).*",
       "resourceTypes": ["main_frame"]
     }
   },
   {
     "id": 2,
-    "priority": 2,
+    "priority": 1,
     "action": {
       "type": "redirect",
       "redirect": {
-        "regexSubstitution": "https://www.google.com/search"
+        "url": "https://www.google.com/"
       }
     },
     "condition": {
-      "regexFilter": "^https://search\\.yahoo\\.com/search(\\?.*)?$",
+      "urlFilter": "*://*search.yahoo.com/*",
       "resourceTypes": ["main_frame"]
     }
   }

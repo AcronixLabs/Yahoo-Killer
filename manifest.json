@@ -5,9 +5,7 @@
   "description": "Redirects all search.yahoo.com traffic to Google Search and sets Google as default search engine",
   "permissions": [
     "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess",
-    "storage",
-    "searchEngines"
+    "declarativeNetRequestWithHostAccess"
   ],
   "host_permissions": [
     "*://search.yahoo.com/*",
